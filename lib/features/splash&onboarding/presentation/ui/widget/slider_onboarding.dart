@@ -32,9 +32,7 @@ class CustomSliderOnBoarding extends StatelessWidget {
             Text(
              OnBoardingList[i].title!,
               textAlign:TextAlign.center ,
-              style: Theme.of(context).textTheme.displayMedium!.copyWith(
-                  color: AppColors.textColor
-              ),
+              style: Theme.of(context).textTheme.displayMedium!.copyWith(color: AppColors.textColor),
             ),
             25.verticalSpace,
             Text(

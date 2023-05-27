@@ -3,6 +3,7 @@ import 'package:ez_learn/features/splash&onboarding/presentation/ui/screen/splas
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'features/notification/ui/screen/notification.dart';
 import 'features/splash&onboarding/presentation/ui/screen/onboarding.dart';
 
 void main() {
@@ -18,13 +19,10 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       designSize: const Size(360, 800),
-      builder:(context,child)=> Directionality(
-        textDirection: TextDirection.rtl,
-        child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: AppTheme.lightTheme,
-          home: SplashScreen(),
-        ),
+      builder:(context,child)=> MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme.lightTheme,
+        home: const SplashScreen(),
       ),
     );
   }

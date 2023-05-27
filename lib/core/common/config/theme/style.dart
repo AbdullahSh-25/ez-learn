@@ -43,8 +43,7 @@ class AppStyle {
       errorBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(8.r), borderSide: const BorderSide(color: AppColors.red)),
       labelStyle: TextStyle(fontSize: 14.sp, fontFamily: fontName));
 
-  static final iconTheme = IconThemeData(color: AppColors.primary, size: 24.r
-  );
+  static final iconTheme = IconThemeData(color: AppColors.primary, size: 24.r);
 
   static TextTheme textTheme = TextTheme(
     displayLarge: TextStyle(fontSize: 26.sp, fontWeight: FontWeight.w600, color: AppColors.primary, fontFamily: fontName),
