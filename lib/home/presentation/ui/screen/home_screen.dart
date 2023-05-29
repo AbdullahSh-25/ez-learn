@@ -5,8 +5,11 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('this is home screen if you dont know'),
+    return Center(
+      child: ElevatedButton(
+        onPressed: () {},
+        child: Text('dsdsa'),
+      ),
     );
   }
 }

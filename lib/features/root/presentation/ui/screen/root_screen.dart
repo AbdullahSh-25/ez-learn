@@ -1,8 +1,11 @@
 import 'package:ez_learn/core/common/config/theme/colors.dart';
 import 'package:ez_learn/features/favourite/presentation/ui/screen/favourite_screen.dart';
+import 'package:ez_learn/features/root/presentation/state/root_provider.dart';
 import 'package:ez_learn/features/setting/presentation/ui/screen/setting._screen.dart';
 import 'package:ez_learn/features/subject/presentation/ui/screen/subjects.dart';
+import 'package:ez_learn/home/presentation/ui/screen/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class RootScreen extends StatefulWidget {
   const RootScreen({super.key});
@@ -12,61 +15,66 @@ class RootScreen extends StatefulWidget {
 }
 
 class _RootScreenState extends State<RootScreen> {
-  final List<Map<String, Object>> _pages = [
-    {
-      'page': const RootScreen(),
-      'title': 'الرئيسية',
-    },
-    {
-      'page': const SubjectScreen(),
-      'title': 'المواد',
-    },
-    {
-      'page': const FavouriteScreen(),
-      'title': 'المفضلة',
-    },
-    {
-      'page': const SettingScreen(),
-      'title': 'الإعدادات',
-    },
+  final List<Widget> _pages = [
+    const HomeScreen(),
+    const SubjectScreen(),
+    const FavouriteScreen(),
+    const SettingScreen(),
   ];
-
-  int _selectedPageIndex = 0;
-
-  void _selectPage(int index) {
-    setState(() {
-      _selectedPageIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: _pages[_selectedPageIndex]['page'] as Widget,
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: _selectPage,
-        backgroundColor: AppColors.white,
-        selectedItemColor: AppColors.primary,
-        unselectedItemColor: AppColors.grey,
-        currentIndex: _selectedPageIndex,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'الرئيسية'
+    return ChangeNotifierProvider<RootProvider>(
+      create: (context) => RootProvider(),
+      child: Consumer<RootProvider>(
+        builder: (context, value, child) => Scaffold(
+          body: PageView(
+            physics: const NeverScrollableScrollPhysics(),
+            controller: value.pageController,
+            children: _pages,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.menu_book_sharp),
-            label: 'المواد'
+          bottomNavigationBar: Container(
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(30),
+                topRight: Radius.circular(30),
+              ),
+              border: Border.all(color: AppColors.primary),
+            ),
+            child: ClipRRect(
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(30),
+                topRight: Radius.circular(30),
+              ),
+              child: BottomNavigationBar(
+                onTap: (index) => value.selectPage(index),
+                backgroundColor: AppColors.white,
+                selectedItemColor: AppColors.primary,
+                unselectedItemColor: AppColors.grey,
+                currentIndex: value.seletedPageIndex,
+                showUnselectedLabels: true,
+                items: const [
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.home),
+                    label: 'الرئيسية',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.menu_book_sharp),
+                    label: 'المواد',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.favorite),
+                    label: 'المفضلة',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.person),
+                    label: 'الإعدادات',
+                  ),
+                ],
+              ),
+            ),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'المفضلة'
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'الإعدادات'
-          ),
-        ],
+        ),
       ),
     );
   }
