@@ -26,53 +26,56 @@ class _RootScreenState extends State<RootScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<RootProvider>(
-      create: (context) => RootProvider(),
-      child: Consumer<RootProvider>(
-        builder: (context, value, child) => Scaffold(
-          body: PageView(
-            physics: const NeverScrollableScrollPhysics(),
-            controller: value.pageController,
-            children: _pages,
-          ),
-          bottomNavigationBar: Container(
-            decoration: BoxDecoration(
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(30),
-                topRight: Radius.circular(30),
-              ),
-              border: Border.all(color: AppColors.primary),
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: ChangeNotifierProvider<RootProvider>(
+        create: (context) => RootProvider(),
+        child: Consumer<RootProvider>(
+          builder: (context, value, child) => Scaffold(
+            body: PageView(
+              physics: const NeverScrollableScrollPhysics(),
+              controller: value.pageController,
+              children: _pages,
             ),
-            child: ClipRRect(
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(30),
-                topRight: Radius.circular(30),
+            bottomNavigationBar: Container(
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  topRight: Radius.circular(30),
+                ),
+                border: Border.all(color: AppColors.primary),
               ),
-              child: BottomNavigationBar(
-                onTap: (index) => value.selectPage(index),
-                backgroundColor: AppColors.white,
-                selectedItemColor: AppColors.primary,
-                unselectedItemColor: AppColors.grey,
-                currentIndex: value.seletedPageIndex,
-                showUnselectedLabels: true,
-                items: const [
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.home),
-                    label: 'الرئيسية',
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.menu_book_sharp),
-                    label: 'المواد',
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.favorite),
-                    label: 'المفضلة',
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.person),
-                    label: 'الإعدادات',
-                  ),
-                ],
+              child: ClipRRect(
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  topRight: Radius.circular(30),
+                ),
+                child: BottomNavigationBar(
+                  onTap: (index) => value.selectPage(index),
+                  backgroundColor: AppColors.white,
+                  selectedItemColor: AppColors.primary,
+                  unselectedItemColor: AppColors.grey,
+                  currentIndex: value.seletedPageIndex,
+                  showUnselectedLabels: true,
+                  items: const [
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.home),
+                      label: 'الرئيسية',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.menu_book_sharp),
+                      label: 'المواد',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.favorite),
+                      label: 'المفضلة',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.person),
+                      label: 'الإعدادات',
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
