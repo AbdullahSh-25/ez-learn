@@ -212,6 +212,14 @@ packages:
     source: hosted
     version: "5.1.0"
   provider:
+    dependency: transitive
+    description:
+      name: petitparser
+      sha256: "49392a45ced973e8d94a85fdb21293fbb40ba805fc49f2965101ae748a3683b4"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.1.0"
+  provider:
     dependency: "direct main"
     description:
       name: provider
