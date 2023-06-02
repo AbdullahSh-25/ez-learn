@@ -10,6 +10,8 @@ import 'package:provider/provider.dart';
 class RootScreen extends StatefulWidget {
   const RootScreen({super.key});
 
+  static const routeName = '/root';
+
   @override
   State<RootScreen> createState() => _RootScreenState();
 }

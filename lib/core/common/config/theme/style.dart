@@ -17,10 +17,11 @@ class AppStyle {
   );
 
   static final OutlinedButtonThemeData outlinedButtonStyle = OutlinedButtonThemeData(
-    style: ElevatedButton.styleFrom(
+    style: OutlinedButton.styleFrom(
         backgroundColor: AppColors.white,
         foregroundColor: AppColors.primary,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        side: BorderSide(color: AppColors.primary),
         padding: const EdgeInsets.symmetric(vertical: 16),
         textStyle: const TextStyle(fontFamily: fontName)),
   );

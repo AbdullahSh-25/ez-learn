@@ -1,4 +1,5 @@
-import 'package:ez_learn/core/common/config/theme/theme.dart';import 'package:ez_learn/features/auth/presentation/ui/screen/sign_in.dart';
+import 'package:ez_learn/core/common/config/theme/theme.dart';
+import 'package:ez_learn/features/auth/presentation/ui/screen/sign_in.dart';
 import 'package:ez_learn/features/auth/presentation/ui/screen/sign_up.dart';
 import 'package:ez_learn/features/splash&onboarding/presentation/ui/screen/splash.dart';
 import 'package:ez_learn/features/root/presentation/ui/screen/root_screen.dart';
@@ -24,14 +25,17 @@ class MyApp extends StatelessWidget {
       builder: (context, child) => MaterialApp(
         title: 'Flutter Demo',
         theme: AppTheme.lightTheme,
-        home: const Directionality(
+        routes: {
+          OnBoardingScreen.routeName: (context) => const OnBoardingScreen(),
+          SignInScreen.routeName: (context) => SignInScreen(),
+          SignUpScreen.routeName: (context) => const SignUpScreen(),
+          RootScreen.routeName:(context) => const RootScreen(),
+        },
+        home: Directionality(
           textDirection: TextDirection.rtl,
-          child: RootScreen(),
+          child: OnBoardingScreen(),
         ),
       ),
     );
   }
 }
-
-
-

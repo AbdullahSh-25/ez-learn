@@ -10,32 +10,22 @@ import '../widget/background_image.dart';
 import '../widget/card_sign_in.dart';
 import '../widget/text_field_widget.dart';
 
-
-
 class SignInScreen extends StatelessWidget {
+  static const routeName = '/singIn';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-     body: Stack(
-       children:  [
-         const BackgroundImage(image: 'assets/images/Group 47934.svg'),
-         Padding(
-           padding: REdgeInsetsDirectional.only(top: 162,bottom: 162,start: 25,end: 25),
-           child:CardSignIn() ,
-         ),
-       ],
-     ),
-
-
-
-
-
+      body: Stack(
+        children: [
+          const BackgroundImage(image: 'assets/images/Group 47934.svg'),
+          Padding(
+            padding: REdgeInsetsDirectional.only(top: 162, bottom: 162, start: 25, end: 25),
+            child: CardSignIn(),
+          ),
+        ],
+      ),
     );
-
-
-
-
   }
 }

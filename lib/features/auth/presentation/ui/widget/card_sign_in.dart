@@ -1,5 +1,6 @@
 import 'package:ez_learn/features/auth/presentation/ui/screen/sign_up.dart';
 import 'package:ez_learn/features/auth/presentation/ui/widget/text_field_widget.dart';
+import 'package:ez_learn/features/root/presentation/ui/screen/root_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -15,18 +16,15 @@ class CardSignIn extends StatelessWidget {
     final TextEditingController passwordTextController = TextEditingController();
     final TextEditingController numberStudentTextController = TextEditingController();
     final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-    const bool hasAccount=true;
+    const bool hasAccount = true;
 
     return Form(
       key: formKey,
       child: Card(
-        shape:  RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(const Radius.circular(24).w),
-            side: const BorderSide(color: AppColors.primary)
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(const Radius.circular(24).w), side: const BorderSide(color: AppColors.primary)),
         elevation: 15,
         child: Padding(
-          padding: REdgeInsetsDirectional.only(start: 20,end: 20),
+          padding: REdgeInsetsDirectional.only(start: 20, end: 20),
           child: ListView(
             shrinkWrap: true,
             children: [
@@ -39,8 +37,8 @@ class CardSignIn extends StatelessWidget {
               TextFormFieldWidget(
                 lable: AppString.numberStudent,
                 myController: numberStudentTextController,
-                valid:   (String? Value){
-                  if(Value!.isEmpty ){
+                valid: (String? Value) {
+                  if (Value!.isEmpty) {
                     return AppString.yourNumberStudent;
                   }
                   return null;
@@ -51,8 +49,8 @@ class CardSignIn extends StatelessWidget {
               TextFormFieldWidget(
                 lable: AppString.password,
                 myController: passwordTextController,
-                valid:   (String? Value){
-                  if(Value!.isEmpty || Value.length < 6){
+                valid: (String? Value) {
+                  if (Value!.isEmpty || Value.length < 6) {
                     return AppString.passwordWrong;
                   }
                   return null;
@@ -61,22 +59,28 @@ class CardSignIn extends StatelessWidget {
               ),
               64.verticalSpace,
               ButtonAuthWidget(
-                onTap: (){},
+                onTap: () {
+                  Navigator.of(context).pushNamed(RootScreen.routeName);
+                },
                 colorbutton: AppColors.primary,
                 colorText: AppColors.white,
                 text: AppString.signIn,
               ),
               16.verticalSpace,
               ButtonAuthWidget(
-                  colorText:AppColors.primary ,
-                  colorbutton: AppColors.white,
-                  text: AppString.signUp,
+                colorText: AppColors.primary,
+                colorbutton: AppColors.white,
+                text: AppString.signUp,
                 onTap: () {
-                  if(hasAccount){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const SignUpScreen(),));
+                  if (hasAccount) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SignUpScreen(),
+                        ));
                   }
                 },
-                  ),
+              ),
               85.verticalSpace,
             ],
           ),

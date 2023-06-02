@@ -13,39 +13,43 @@ import '../widget/slider_onboarding.dart';
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
 
+  static const routeName = '/onBoarding';
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => OnBoardingCubit(),
-      child: BlocBuilder<OnBoardingCubit ,OnBoardingState>(
+      child: BlocBuilder<OnBoardingCubit, OnBoardingState>(
         builder: (context, state) {
-          return   Scaffold(
-           floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
+          print(state.currentPage);
+          return Scaffold(
+            floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
             resizeToAvoidBottomInset: false,
             body: Padding(
-              padding:REdgeInsetsDirectional.only(top: 100,bottom: 70),
+              padding: REdgeInsetsDirectional.only(top: 100, bottom: 70),
               child: CustomSliderOnBoarding(),
             ),
-            floatingActionButton:Visibility(
-              replacement:const ButtonSliderOnBoarding(),
-              visible: state.currentPage==2,
+            floatingActionButton: Visibility(
+              replacement: ButtonSliderOnBoarding(),
+              visible: state.currentPage == 2,
               child: Row(
-              children: [
-                const ButtonSliderOnBoarding(),
-               18.horizontalSpace,
-                Text(
-                    AppString.startLearning,
-                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                    fontSize: 20.sp,
+                children: [
+                  ButtonSliderOnBoarding(
+                    goToLogin: true,
                   ),
-                ),
-              ],
+                  18.horizontalSpace,
+                  Text(
+                    AppString.startLearning,
+                    style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                          fontSize: 20.sp,
+                        ),
+                  ),
+                ],
+              ),
             ),
-            ) ,
           );
         },
       ),
     );
-
   }
 }

@@ -5,6 +5,8 @@ import '../widget/background_image.dart';
 import '../widget/card_sign_up.dart';
 
 class SignUpScreen extends StatelessWidget {
+  static const routeName = '/signUp';
+
   const SignUpScreen({Key? key}) : super(key: key);
 
   @override
