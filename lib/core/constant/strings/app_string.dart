@@ -17,6 +17,13 @@ class AppString {
   static const passwordWrong= 'كلمة المرور يجب أن تكون أكثر من 6';
   static const yourName='ادخل الاسم';
   static const confirmYourPasswordisWrong='كلمة السر ليست متطابقة';
+  static const myProfile ='ملفي الشخصي';
+  static const resourceManger ='إدارة المواد';
+  static const myEmoticons= 'علاماتي';
+  static const logOut= 'تسجيل الخروج';
+  static const editYourProfile ='تعديل الملف الشخصي';
+
+
 
 
 
