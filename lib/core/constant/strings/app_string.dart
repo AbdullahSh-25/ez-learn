@@ -22,6 +22,10 @@ class AppString {
   static const myEmoticons= 'علاماتي';
   static const logOut= 'تسجيل الخروج';
   static const editYourProfile ='تعديل الملف الشخصي';
+  static const yourSubject='المواد المختارة';
+  static const changePassword='تغيير كلمة السر';
+  static const saveModifcations= 'حفظ التعديلات';
+
 
 
 
