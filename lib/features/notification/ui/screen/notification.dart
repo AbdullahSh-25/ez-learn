@@ -6,6 +6,8 @@ import '../widget/appBar_widget.dart';
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({Key? key}) : super(key: key);
 
+  static const routerName = '/notification';
+
   @override
   Widget build(BuildContext context) {
     return Directionality(

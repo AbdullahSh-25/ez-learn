@@ -33,6 +33,7 @@ dependencies:
   flutter_svg: ^2.0.5
   equatable: ^2.0.5
   provider: ^6.0.5
+  reactive_forms: ^15.0.0
 
 dev_dependencies:
   flutter_test:

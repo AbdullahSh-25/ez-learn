@@ -18,10 +18,10 @@ class RootScreen extends StatefulWidget {
 
 class _RootScreenState extends State<RootScreen> {
   final List<Widget> _pages = [
-    const HomeScreen(),
+    // const HomeScreen(),
     const SubjectScreen(),
     const FavouriteScreen(),
-    const SettingScreen(),
+    SettingScreen(),
   ];
 
   @override
@@ -58,10 +58,10 @@ class _RootScreenState extends State<RootScreen> {
                   currentIndex: value.seletedPageIndex,
                   showUnselectedLabels: true,
                   items: const [
-                    BottomNavigationBarItem(
-                      icon: Icon(Icons.home),
-                      label: 'الرئيسية',
-                    ),
+                    // BottomNavigationBarItem(
+                    //   icon: Icon(Icons.home),
+                    //   label: 'الرئيسية',
+                    // ),
                     BottomNavigationBarItem(
                       icon: Icon(Icons.menu_book_sharp),
                       label: 'المواد',
