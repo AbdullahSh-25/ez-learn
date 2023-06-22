@@ -7,6 +7,7 @@ import 'package:ez_learn/features/root/presentation/ui/screen/root_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'features/lectures_details/presentation/ui/screen/lectures_details_screen.dart';
 import 'features/notification/ui/screen/notification.dart';
 import 'features/splash&onboarding/presentation/ui/screen/onboarding.dart';
 
@@ -33,10 +34,11 @@ class MyApp extends StatelessWidget {
           RootScreen.routeName: (context) => const RootScreen(),
           EditProfile.routeName: (context) => const EditProfile(),
           NotificationScreen.routerName: (context) => const NotificationScreen(),
+          LecturesDetailsScreen.routeName:(context)=> const LecturesDetailsScreen()
         },
         home: Directionality(
           textDirection: TextDirection.rtl,
-          child: OnBoardingScreen(),
+          child: LecturesDetailsScreen(),
         ),
       ),
     );

@@ -42,4 +42,11 @@ class AppString {
   static const String  explainThree='و يمكنك أيضاً اختبار دراستك للمحاضرة من خلال الاختبارات بالإضافة أن بإمكانك إضافة أسئلة للاختبار';
   //notification
   static const String notification='الإشعارات';
+  //lecture detials
+  static const String lecture1='محاضرات النظري';
+  static const String lecture2='محاضرات العملي';
+  static const String  vedio='الفيديوهات الداعمة';
+  static const String  Quize='الاختبارات';
+  static const String  Questions='أسئلة الدورات';
+
 }
