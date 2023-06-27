@@ -15,11 +15,12 @@ class SubjectItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(20.r),
+      padding: EdgeInsets.all(10.r),
       decoration: BoxDecoration(
         border: Border.all(
           color: AppColors.primary,
         ),
+        borderRadius: BorderRadius.circular(15.r),
       ),
       child: Row(
         children: [

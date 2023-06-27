@@ -1,4 +1,5 @@
 import 'package:ez_learn/core/common/config/theme/colors.dart';
+import 'package:ez_learn/features/subject_discription/presentation/ui/screen/subject_description.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,14 +14,16 @@ class LecturesDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding:  REdgeInsetsDirectional.only(top: 65),
+        padding: REdgeInsetsDirectional.only(top: 65),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
-          children:  [
-            const CustomAppBar( text: 'نظرية المعلومات',),
+          children: [
+            const CustomAppBar(
+              text: 'نظرية المعلومات',
+            ),
             7.verticalSpace,
-            Center(
-              child: const TextSpanWidget(
+            const Center(
+              child: TextSpanWidget(
                 text1: 'السنة الثالثة',
                 text2: "الفصل الأول",
               ),
@@ -31,20 +34,19 @@ class LecturesDetailsScreen extends StatelessWidget {
             Padding(
               padding: REdgeInsetsDirectional.only(end: 26),
               child: GestureDetector(
-                onTap: (){},
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => SubjectDescription(),
+                  ));
+                },
                 child: Container(
                   height: 52.h,
                   width: 52.w,
-                  decoration: BoxDecoration(
-                      color: AppColors.primary.withOpacity(0.2),
-                      borderRadius: BorderRadius.all(Radius.circular(10))
-                  ),
+                  decoration: BoxDecoration(color: AppColors.primary.withOpacity(0.2), borderRadius: const BorderRadius.all(Radius.circular(10))),
                   child: const Icon(Icons.book_rounded),
                 ),
               ),
             )
-
-
           ],
         ),
       ),

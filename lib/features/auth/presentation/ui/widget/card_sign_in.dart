@@ -60,7 +60,10 @@ class CardSignIn extends StatelessWidget {
               64.verticalSpace,
               ButtonAuthWidget(
                 onTap: () {
-                  Navigator.of(context).pushNamed(RootScreen.routeName);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const RootScreen(),)
+                  );
                 },
                 colorbutton: AppColors.primary,
                 colorText: AppColors.white,

@@ -18,8 +18,10 @@ class ButtonSliderOnBoarding extends StatelessWidget {
       child: FloatingActionButton(
           backgroundColor: AppColors.primary,
           onPressed: () {
-            if(goToLogin) {
-              Navigator.of(context).pushNamed(SignInScreen.routeName);
+            if (goToLogin) {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => SignInScreen(),
+              ));
             } else {
               OnBoardingCubit.get(context).next(context);
             }

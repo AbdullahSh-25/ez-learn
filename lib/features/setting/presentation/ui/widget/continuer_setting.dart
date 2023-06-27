@@ -32,7 +32,9 @@ class CountinuerSetting extends StatelessWidget {
             text: AppString.myProfile,
             icon: Icons.account_circle_sharp,
             onTap: () {
-              Navigator.of(context).pushNamed(EditProfile.routeName);
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const EditProfile(),
+              ));
             },
           ),
           15.verticalSpace,
