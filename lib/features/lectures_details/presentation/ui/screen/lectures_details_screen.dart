@@ -14,7 +14,7 @@ class LecturesDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: REdgeInsetsDirectional.only(top: 65),
+        padding: REdgeInsetsDirectional.only(top: 65.r),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [

@@ -17,14 +17,17 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       designSize: const Size(360, 800),
-      builder: (context, child) => Directionality(
-        textDirection: TextDirection.rtl,
-        child: MaterialApp(
-          title: 'Flutter Demo',
-          theme: AppTheme.lightTheme,
-          debugShowCheckedModeBanner: false,
-          home: const OnBoardingScreen(),
-        ),
+      builder: (context, child) => MaterialApp(
+        title: 'Flutter Demo',
+        theme: AppTheme.lightTheme,
+        debugShowCheckedModeBanner: false,
+        home: const OnBoardingScreen(),
+        builder: (context, child) {
+          return Directionality(
+            textDirection: TextDirection.rtl,
+            child: child!,
+          );
+        },
       ),
     );
   }

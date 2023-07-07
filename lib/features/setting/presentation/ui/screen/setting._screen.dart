@@ -6,7 +6,6 @@ import '../widget/background_settings.dart';
 import '../widget/continuer_setting.dart';
 import '../widget/photo_profile.dart';
 
-
 class SettingScreen extends StatelessWidget {
   static const routeName = '/setting';
 
@@ -15,28 +14,15 @@ class SettingScreen extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Stack(
-        children:[
+        children: [
           const BackgroundSettings(image: 'assets/images/Group 47935.svg'),
           Padding(
-            padding: REdgeInsetsDirectional.only(top: 190,start: 1,end: 1),
+            padding: REdgeInsetsDirectional.only(top: 190, start: 1, end: 1),
             child: CountinuerSetting(),
           ),
-          Padding(
-            padding: REdgeInsetsDirectional.only(top: 120,start: 140),
-            child:  const PhotoProfile()),
-
-
-
-
-           ],
-         ),
+          Padding(padding: REdgeInsetsDirectional.only(top: 120, start: 140), child: const PhotoProfile()),
+        ],
+      ),
     );
-
-
-
   }
 }
-
-
-
-

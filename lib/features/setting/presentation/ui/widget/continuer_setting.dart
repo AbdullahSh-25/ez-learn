@@ -1,6 +1,7 @@
 import 'package:ez_learn/core/common/config/theme/colors.dart';
 import 'package:ez_learn/core/constant/strings/app_string.dart';
 import 'package:ez_learn/features/edit_profile/presentation/ui/screen/edit_profile.dart';
+import 'package:ez_learn/features/my_marks/presentation/ui/screen/my_marks.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -40,7 +41,17 @@ class CountinuerSetting extends StatelessWidget {
           15.verticalSpace,
           const CustomRowWidget(text: AppString.resourceManger, icon: Icons.save),
           15.verticalSpace,
-          const CustomRowWidget(text: AppString.myEmoticons, icon: Icons.school),
+          CustomRowWidget(
+            text: AppString.myEmoticons,
+            icon: Icons.school,
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const MyMarks(),
+                ),
+              );
+            },
+          ),
           15.verticalSpace,
           const CustomRowWidget(text: AppString.logOut, icon: Icons.logout),
         ],
