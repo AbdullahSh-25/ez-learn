@@ -21,11 +21,11 @@ BuildContext context,
      AppString.notification,
      style: Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: 20.sp,color: AppColors.white),
    ),
-    actions: [
-      Padding(
-        padding:REdgeInsetsDirectional.only(end: 22),
-        child: Icon(Icons.arrow_forward),
-      )
-    ],
+    // actions: [
+    //   Padding(
+    //     padding:REdgeInsetsDirectional.only(end: 22),
+    //     child: Icon(Icons.arrow_forward),
+    //   )
+    // ],
   );
 }

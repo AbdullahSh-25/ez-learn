@@ -49,4 +49,11 @@ class AppString {
   static const String  Quize='الاختبارات';
   static const String  Questions='أسئلة الدورات';
 
+//quiz
+static const String startQuiz='البدء بالاختبار';
+  static const String addQuestion='أضف سؤال';
+  static const String question='السؤال';
+  static const String options='الخيارات';
+  static const String hint='التلميح';
+  static const String send='إرسال';
 }

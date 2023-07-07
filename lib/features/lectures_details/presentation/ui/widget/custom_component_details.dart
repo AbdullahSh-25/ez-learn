@@ -2,6 +2,7 @@ import 'package:ez_learn/core/common/widgets/custom_page_route.dart';
 import 'package:ez_learn/core/constant/strings/app_string.dart';
 import 'package:ez_learn/features/lectures_details/presentation/ui/widget/row_component.dart';
 import 'package:ez_learn/features/lectures_page/presentation/ui/screen/lectures_page.dart';
+import 'package:ez_learn/features/quiz/presentation/ui/screen/quiz_screen.dart';
 import 'package:ez_learn/features/supported_vidieos/presentation/ui/screen/supported_vidieos.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -36,7 +37,12 @@ class CustomComponentDetails extends StatelessWidget {
             },
           ),
           18.verticalSpace,
-          const RowComponents(
+           RowComponents(
+            onTap: (){
+              Navigator.of(context).push(CustomPageRoute(
+                child: const QuizScreen(),
+              ));
+            },
             icon: Icons.quiz,
             text: AppString.Quize,
           ),
