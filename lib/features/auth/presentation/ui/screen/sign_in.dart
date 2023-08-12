@@ -18,8 +18,11 @@ class SignInScreen extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Stack(
+        fit: StackFit.expand,
         children: [
-          const BackgroundImage(image: 'assets/images/Group 47934.svg'),
+          BackgroundImage(
+            image: 'assets/images/Group 47934.svg',
+          ),
           Padding(
             padding: REdgeInsetsDirectional.only(top: 162, bottom: 162, start: 25, end: 25),
             child: CardSignIn(),

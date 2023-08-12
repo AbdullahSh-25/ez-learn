@@ -14,11 +14,12 @@ class SignUpScreen extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Stack(
-        children:  [
+        fit: StackFit.expand,
+        children: [
           const BackgroundImage(image: 'assets/images/Group47933.svg'),
           Padding(
-            padding: REdgeInsetsDirectional.only(top: 70,bottom: 70,start: 25,end: 25),
-            child:const CardSignUp() ,
+            padding: REdgeInsetsDirectional.only(top: 70, bottom: 70, start: 25, end: 25),
+            child: const CardSignUp(),
           ),
         ],
       ),

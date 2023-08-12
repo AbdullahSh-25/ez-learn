@@ -19,7 +19,7 @@ class VideoItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 90.h,
-      width: MediaQuery.sizeOf(context).width,
+      width: MediaQuery.of(context).size.width,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -45,7 +45,7 @@ class VideoItem extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: MediaQuery.sizeOf(context).width - 152.w,
+                  width: MediaQuery.of(context).size.width - 152.w,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

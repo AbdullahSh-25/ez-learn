@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:ez_learn/core/common/widgets/custom_page_route.dart';
 import 'package:ez_learn/core/constant/strings/app_string.dart';
 import 'package:ez_learn/features/lectures_details/presentation/ui/widget/row_component.dart';
@@ -37,8 +38,8 @@ class CustomComponentDetails extends StatelessWidget {
             },
           ),
           18.verticalSpace,
-           RowComponents(
-            onTap: (){
+          RowComponents(
+            onTap: () {
               Navigator.of(context).push(CustomPageRoute(
                 child: const QuizScreen(),
               ));
