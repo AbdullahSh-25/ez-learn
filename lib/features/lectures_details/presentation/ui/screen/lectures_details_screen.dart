@@ -14,46 +14,44 @@ class LecturesDetailsScreen extends StatelessWidget {
   static const routeName = '/lectureDetail';
   @override
   Widget build(BuildContext context) {
-    return CommentScreen();
-
-    // return Scaffold(
-    //   body: Padding(
-    //     padding: REdgeInsetsDirectional.only(top: 65.r),
-    //     child: Column(
-    //       crossAxisAlignment: CrossAxisAlignment.end,
-    //       children: [
-    //         const CustomAppBar(
-    //           text: 'نظرية المعلومات',
-    //         ),
-    //         7.verticalSpace,
-    //         const Center(
-    //           child: TextSpanWidget(
-    //             text1: 'السنة الثالثة',
-    //             text2: "الفصل الأول",
-    //           ),
-    //         ),
-    //         35.verticalSpace,
-    //         const CustomComponentDetails(),
-    //         const Spacer(),
-    //         Padding(
-    //           padding: REdgeInsetsDirectional.only(end: 26),
-    //           child: GestureDetector(
-    //             onTap: () {
-    //               Navigator.of(context).push(MaterialPageRoute(
-    //                 builder: (context) => SubjectDescription(),
-    //               ));
-    //             },
-    //             child: Container(
-    //               height: 52.h,
-    //               width: 52.w,
-    //               decoration: BoxDecoration(color: AppColors.primary.withOpacity(0.2), borderRadius: const BorderRadius.all(Radius.circular(10))),
-    //               child: const Icon(Icons.book_rounded),
-    //             ),
-    //           ),
-    //         )
-    //       ],
-    //     ),
-    //   ),
-    // );
+    return Scaffold(
+      body: Padding(
+        padding: REdgeInsetsDirectional.only(top: 65.r),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            const CustomAppBar(
+              text: 'نظرية المعلومات',
+            ),
+            7.verticalSpace,
+            const Center(
+              child: TextSpanWidget(
+                text1: 'السنة الثالثة',
+                text2: "الفصل الأول",
+              ),
+            ),
+            35.verticalSpace,
+            const CustomComponentDetails(),
+            const Spacer(),
+            Padding(
+              padding: REdgeInsetsDirectional.only(end: 26),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => SubjectDescription(),
+                  ));
+                },
+                child: Container(
+                  height: 52.h,
+                  width: 52.w,
+                  decoration: BoxDecoration(color: AppColors.primary.withOpacity(0.2), borderRadius: const BorderRadius.all(Radius.circular(10))),
+                  child: const Icon(Icons.book_rounded),
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }

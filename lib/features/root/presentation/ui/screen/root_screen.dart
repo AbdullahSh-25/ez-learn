@@ -20,7 +20,7 @@ class _RootScreenState extends State<RootScreen> {
   final List<Widget> _pages = [
     // const HomeScreen(),
     const SubjectScreen(),
-    const FavouriteScreen(),
+    FavouriteScreen(),
     SettingScreen(),
   ];
 

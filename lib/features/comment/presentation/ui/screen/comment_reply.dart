@@ -72,16 +72,20 @@ class _MyTreeViewState extends State<MyTreeView> {
           ),
           20.verticalSpace,
           Expanded(
-            child: TreeView<MyNode>(
-              treeController: treeController,
-              // Provide a widget builder callback to map your tree nodes into widgets.
-              nodeBuilder: (BuildContext context, TreeEntry<MyNode> entry) {
-                return MyTreeTile(
-                  key: ValueKey(entry.node),
-                  entry: entry,
-                  onTap: () {},
-                );
-              },
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 24.r,
+              ),
+              child: ListView.builder(
+                itemCount: 5,
+                itemBuilder: (context, index) {
+                  if (index == 0) return CommentItem();
+                  return Padding(
+                    padding: EdgeInsets.only(right: 15.r),
+                    child: CommentItem(),
+                  );
+                },
+              ),
             ),
           ),
         ],
@@ -91,38 +95,4 @@ class _MyTreeViewState extends State<MyTreeView> {
 }
 
 // Create a widget to display the data held by your tree nodes.
-class MyTreeTile extends StatelessWidget {
-  const MyTreeTile({
-    super.key,
-    required this.entry,
-    required this.onTap,
-  });
 
-  final TreeEntry<MyNode> entry;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      // Wrap your content in a TreeIndentation widget which will properly
-      // indent your nodes (and paint guides, if required).
-      //
-      // If you don't want to display indent guides, you could replace this
-      // TreeIndentation with a Padding widget, providing a padding of
-      // `EdgeInsetsDirectional.only(start: TreeEntry.level * indentAmount)`
-      child: TreeIndentation(
-        entry: entry,
-        // Provide an indent guide if desired. Indent guides can be used to
-        // add decorations to the indentation of tree nodes.
-        // This could also be provided through a DefaultTreeIndentGuide
-        // inherited widget placed above the tree view.
-        guide: const IndentGuide.connectingLines(indent: 40),
-        // The widget to render next to the indentation. TreeIndentation
-        // respects the text direction of `Directionality.maybeOf(context)`
-        // and defaults to left-to-right.
-        child: CommentItem(),
-      ),
-    );
-  }
-}

@@ -27,7 +27,7 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
-  dio: ^5.1.2
+  dio: ^4.0.6
   flutter_bloc: ^8.1.2
   flutter_screenutil: ^5.7.0
   flutter_svg: ^2.0.5
@@ -38,6 +38,13 @@ dependencies:
   # youtube_player_flutter: ^8.1.2
   comment_tree: ^0.3.0
   flutter_fancy_tree_view: ^1.1.1
+  get_it: ^7.6.0
+  shared_preferences: ^2.2.0
+  hive: ^2.2.3
+  dio_refresh_bot: ^2.1.2
+  dio_flutter_transformer2: ^4.0.1
+  either_dart: ^0.4.0
+  bot_toast: ^4.0.3
 
 dev_dependencies:
   flutter_test:

@@ -1,10 +1,14 @@
+import 'package:bot_toast/bot_toast.dart';
 import 'package:ez_learn/core/common/config/theme/theme.dart';
+import 'package:ez_learn/core/common/injection/injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'features/splash&onboarding/presentation/ui/screen/onboarding.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initInjection();
   runApp(const MyApp());
 }
 
@@ -23,9 +27,12 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: const OnBoardingScreen(),
         builder: (context, child) {
-          return Directionality(
-            textDirection: TextDirection.rtl,
-            child: child!,
+          return BotToastInit()(
+            context,
+            Directionality(
+              textDirection: TextDirection.rtl,
+              child: child!,
+            ),
           );
         },
       ),

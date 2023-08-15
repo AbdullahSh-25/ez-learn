@@ -5,6 +5,7 @@ class AppString {
   static const password='كلمة السر';
   static const numberStudent='الرقم الجامعي';
   static const name='الاسم';
+  static const lastName='الكنية';
   static const yearStudying='السنة الدراسية';
   static const year1='السنة الاولى';
   static const year2='السنة الثانية';
