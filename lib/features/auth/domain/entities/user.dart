@@ -1,3 +1,5 @@
+import 'package:ez_learn/generated/assets.dart';
+
 class User {
   final String id;
   final String firstName;
@@ -6,6 +8,7 @@ class User {
   final String refreshToken;
   final String avatarUrl;
   final String universityId;
+  final int year;
 
   User({
     required this.firstName,
@@ -15,6 +18,7 @@ class User {
     required this.id,
     required this.avatarUrl,
     required this.universityId,
+    required this.year,
   });
 
   @override
@@ -31,6 +35,17 @@ class User {
       'refreshToken': refreshToken,
       'universityId': universityId,
       'avatarUrl': avatarUrl,
+      'year': year,
+    };
+  }
+
+  Map<String, dynamic> toMapForProfile() {
+    return <String, dynamic>{
+      'firstName': firstName,
+      'lastName': lastName,
+      'universityId': universityId,
+      'avatar': avatarUrl,
+      'year': year,
     };
   }
 
@@ -40,9 +55,10 @@ class User {
       lastName: map['lastName'] as String,
       firstName: map['firstName'] as String,
       accessToken: map['accessToken'] as String,
-      refreshToken: map['refreshToken'] as String,
-      avatarUrl: map['avatarUrl'] as String,
+      refreshToken: map['refreshToken'] ?? '',
+      avatarUrl: map['avatarUrl'] ?? Assets.imagesBoy1,
       universityId: map['universityId'] as String,
+      year: map['year'] ?? 1,
     );
   }
 
@@ -54,6 +70,7 @@ class User {
     String? lastName,
     String? avatarUrl,
     String? universityId,
+    int? year,
   }) {
     return User(
       accessToken: accessToken ?? this.accessToken,
@@ -63,6 +80,7 @@ class User {
       lastName: lastName ?? this.firstName,
       avatarUrl: avatarUrl ?? this.avatarUrl,
       universityId: universityId ?? this.universityId,
+      year: year ?? this.year,
     );
   }
 }

@@ -13,36 +13,31 @@ class ErrorInterceptor extends Interceptor {
       err.error = AppException.known("لا يوجد إتصال في الانترنت");
       handler.next(err);
     } else if (err.response.toString().isNotEmpty && err.response?.data?["message"] != null) {
-      // if (err.response?.data?["message"].contains("user not found") || err.response?.data?["message"].contains("Email or Password Wrong")) {
-      //   err.error = AppException.known(AppString.userNotFound);
-      //   handler.reject(err);
-      // } else if (err.response?.data?["message"].contains("Email is not exist")) {
-      //   err.error = AppException.known(AppString.emailNotExistMessage);
-      //   handler.reject(err);
-      // } else if (err.response?.data?["message"].contains("Wrong code")) {
-      //   err.error = AppException.known(AppString.emailNotExistMessage);
-      //   handler.reject(err);
-      // } else if (err.response?.data?["message"].contains("already exist")) {
-      //   err.error = AppException.known(AppString.alreadyExistMessage);
-      //   handler.reject(err);
-      // } else if (err.response?.data?["message"].contains("لا")) {
-      //   err.error = AppException.known(err.response?.data?["message"]);
-      //   handler.reject(err);
-      // }else {
-      //   err.error = AppException.known('Please Try Again Later');
-      //   handler.reject(err);
-      // }
+      if (err.response?.data?["message"].contains("User Not Found") || err.response?.data?["message"].contains("Email or Password Wrong")) {
+        err.error = AppException.known('الحساب غير موجود');
+        handler.reject(err);
+      } else if (err.response?.data?["message"].contains("Email is not exist")) {
+        err.error = AppException.known('الحساب ليس موجود');
+        handler.reject(err);
+      } else if (err.response?.data?["message"].contains("already exist")) {
+        err.error = AppException.known('هذا الحساب موجود بالفعل');
+        handler.reject(err);
+      } else if (err.response?.data?["message"].contains("لا")) {
+        err.error = AppException.known(err.response?.data?["message"]);
+        handler.reject(err);
+      } else {
+        err.error = AppException.known('الرجاء المحاولة لاحقا');
+        handler.reject(err);
+      }
     } else if (err.type == DioErrorType.connectTimeout || err.type == DioErrorType.sendTimeout || err.type == DioErrorType.receiveTimeout) {
       err.error = AppException.known('no interntet connection');
       handler.reject(err);
-    } else if (err.type == DioErrorType.response &&
-        err.response?.statusCode == 500) {
+    } else if (err.type == DioErrorType.response && err.response?.statusCode == 500) {
       err.error = AppException.known('please try again later');
       handler.next(err);
     } else if (err.type == DioErrorType.response) {
       var data = err.response?.data;
-      err.error =
-      data is String ? AppException.known(data) : AppException.unknown();
+      err.error = data is String ? AppException.known(data) : AppException.unknown();
       handler.next(err);
     } else {
       err.error = AppException.unknown();

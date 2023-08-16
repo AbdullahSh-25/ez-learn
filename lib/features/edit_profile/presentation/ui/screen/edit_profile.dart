@@ -1,5 +1,7 @@
 
 
+import 'package:ez_learn/core/common/injection/injection.dart';
+import 'package:ez_learn/features/edit_profile/presentation/ui/state/bloc/profile_bloc.dart';
 import 'package:ez_learn/features/edit_profile/presentation/widget/appBar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,16 +18,19 @@ class EditProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      appBar: BuildAppBarItem(context),
-      body: Padding(
-        padding: REdgeInsetsDirectional.only(start: 25, end: 25,bottom: 20),
-        child: BlocProvider(
-            create:(context) => DropdownBloc() ,
-            child: const InfoEditProfile()),
+    return BlocProvider.value(
+      value: getIt<ProfileBloc>(),
+      child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        appBar: BuildAppBarItem(context),
+        body: Padding(
+          padding: REdgeInsetsDirectional.only(start: 25, end: 25,bottom: 20),
+          child: BlocProvider(
+              create:(context) => DropdownBloc(),
+              child: const InfoEditProfile()),
+        ),
+    
       ),
-
     );
   }
 }

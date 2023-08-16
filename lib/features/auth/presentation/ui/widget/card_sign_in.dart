@@ -88,13 +88,36 @@ class CardSignIn extends StatelessWidget {
                     },
                     colorbutton: AppColors.primary,
                     colorText: AppColors.white,
-                    text: AppString.signIn,
+                    child: state.status.isLoading()
+                        ? Center(
+                            child: FittedBox(
+                              child: Padding(
+                                padding: const EdgeInsets.all(0),
+                                child: SizedBox(
+                                  width: 20.r,
+                                  height: 20.r,
+                                  child: const CircularProgressIndicator(
+                                    color: AppColors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          )
+                        : Text(AppString.signIn,
+                            style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                                  fontSize: 20.sp,
+                                  color: AppColors.white,
+                                )),
                   ),
                   16.verticalSpace,
                   ButtonAuthWidget(
                     colorText: AppColors.primary,
                     colorbutton: AppColors.white,
-                    text: AppString.signUp,
+                    child: Text(AppString.signUp,
+                        style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                              fontSize: 20.sp,
+                              color: AppColors.primary,
+                            )),
                     onTap: () {
                       if (hasAccount) {
                         Navigator.push(

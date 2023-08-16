@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1015657897666",
+    "project_id": "ez-learn-22",
+    "storage_bucket": "ez-learn-22.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015657897666:android:07451e99b971d9a57ba55b",
+        "android_client_info": {
+          "package_name": "com.example.ez_learn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1015657897666-glcnrf0ji273iqn6bh44a2f3bs3hvd8g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyk5vMBTQ5D4xCJC48vHgekJMVYVLx61c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1015657897666-glcnrf0ji273iqn6bh44a2f3bs3hvd8g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

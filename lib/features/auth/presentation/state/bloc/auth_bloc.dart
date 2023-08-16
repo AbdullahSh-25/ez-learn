@@ -25,14 +25,16 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   login(LoginEvent event, Emitter<AuthState> emit) async {
-    emit(state.copyWith(status: const BlocStatus.initial()));
+    emit(state.copyWith(status: const BlocStatus.loading()));
     final result = await _facade.login(UserParam(universcityId: event.univercityId, password: event.password));
     result.fold(
       (left) {
         emit(state.copyWith(status: BlocStatus.fail(error: left)));
         BotToast.showText(text: left);
       },
-      (right) => emit(state.copyWith(status: const BlocStatus.success())),
+      (right) {
+        emit(state.copyWith(status: const BlocStatus.success()));
+      },
     );
   }
 

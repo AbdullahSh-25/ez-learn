@@ -3,8 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PhotoProfile extends StatelessWidget {
-  const PhotoProfile({Key? key}) : super(key: key);
+  final String avatar;
 
+  const PhotoProfile({
+    Key? key,
+    required this.avatar,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +28,7 @@ class PhotoProfile extends StatelessWidget {
             ),
           ),
           InkWell(
-            onTap: (){},
+            onTap: () {},
             child: Padding(
               padding: REdgeInsetsDirectional.only(end: 55, top: 55),
               child: Container(

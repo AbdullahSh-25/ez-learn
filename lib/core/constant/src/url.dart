@@ -9,4 +9,6 @@ class AppUrl {
   //user
   static const login = "Student/LogIn";
   static const create = "Student/Create";
+  static const modify = "Student/Modify";
+  static const getMySubjects = "Student/GetMySubjects";
 }

@@ -3,8 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class StackWidget extends StatelessWidget {
-  const StackWidget({Key? key}) : super(key: key);
-  
+  final void Function()? onTap;
+  final String? avatar;
+
+  const StackWidget({
+    Key? key,
+    this.onTap,
+    this.avatar,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,19 +18,23 @@ class StackWidget extends StatelessWidget {
       child: Stack(
         children: [
           Container(
+            width: 70.r,
+            height: 70.r,
             decoration: BoxDecoration(
               color: AppColors.white,
               borderRadius: BorderRadius.circular(67).r,
               border: Border.all(color: AppColors.primary, width: 2),
             ),
-            child: const Icon(
-              Icons.person,
-              size: 55,
-              color: AppColors.outlineBlack,
-            ),
+            child: avatar!.isEmpty
+                ? const Icon(
+                    Icons.person,
+                    size: 55,
+                    color: AppColors.outlineBlack,
+                  )
+                : Image.asset(avatar!),
           ),
           InkWell(
-            onTap: (){},
+            onTap: onTap ?? () {},
             child: Padding(
               padding: REdgeInsetsDirectional.only(end: 40, top: 35),
               child: Container(

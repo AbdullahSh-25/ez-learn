@@ -45,6 +45,8 @@ dependencies:
   dio_flutter_transformer2: ^4.0.1
   either_dart: ^0.4.0
   bot_toast: ^4.0.3
+  firebase_core: ^2.15.1
+  firebase_messaging: ^14.6.6
 
 dev_dependencies:
   flutter_test:

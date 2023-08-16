@@ -14,5 +14,6 @@ class AppTheme {
     textButtonTheme: AppStyle.textButtonStyle,
     inputDecorationTheme: AppStyle.inputDecoration,
     iconTheme: AppStyle.iconTheme,
+    
   );
 }
