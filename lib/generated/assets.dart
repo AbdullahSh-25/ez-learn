@@ -2,17 +2,23 @@
 class Assets {
   Assets._();
 
-  static const String imagesBoy1 = 'assets/images/boy1.png';
-  static const String imagesBoy2 = 'assets/images/boy2.png';
+  static const String fontsAlmaraiRegular = 'assets/fonts/AlmaraiRegular.ttf';
   static const String imagesDemoAmico = 'assets/images/Demo-amico.png';
   static const String imagesDemoBro = 'assets/images/Demo-bro.png';
   static const String imagesEZ = 'assets/images/EZ.svg';
-  
-  static const String imagesGirl1 = 'assets/images/girl1.png';
-  static const String imagesGirl2 = 'assets/images/girl2.png';
   
   static const String imagesGroup47933 = 'assets/images/Group47933.svg';
   
   static const String imagesPhoto20230624042503 = 'assets/images/photo_2023-06-24_04-25-03.jpg';
 
+
+  static const String imagesBoy1 = 'assets/images/boy1.png';
+  static const String imagesBoy2 = 'assets/images/boy2.png';
+  
+  
+  static const String imagesGirl1 = 'assets/images/girl1.png';
+  static const String imagesGirl2 = 'assets/images/girl2.png';
+
 }
+
+

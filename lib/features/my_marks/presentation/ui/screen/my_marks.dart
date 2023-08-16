@@ -1,3 +1,4 @@
+import 'package:ez_learn/core/common/config/theme/colors.dart';
 import 'package:ez_learn/features/lectures_details/presentation/ui/widget/coustom_appbar_lecture.dart';
 import 'package:ez_learn/features/my_marks/presentation/ui/screen/marks_detail.dart';
 import 'package:ez_learn/features/my_marks/presentation/ui/widget/item_content.dart';
@@ -12,7 +13,7 @@ class MyMarks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade300,
+      backgroundColor: AppColors.whiteBlue2 ,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
