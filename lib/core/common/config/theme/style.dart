@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AppStyle {
   AppStyle._();
 
-  static const String fontName = 'Almarai';
+  static const String fontName = 'almarai';
 
   static final ElevatedButtonThemeData elevatedButtonStyle = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(

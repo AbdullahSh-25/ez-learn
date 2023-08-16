@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../core/common/config/theme/colors.dart';
+
 class MarkItem extends StatelessWidget {
   const MarkItem({
     super.key,
@@ -19,7 +21,7 @@ class MarkItem extends StatelessWidget {
         padding: EdgeInsets.all(20.r),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15.r),
-          color: Colors.grey[300],
+          color: AppColors.whiteBlue2,
           boxShadow: [
             BoxShadow(
               color: Colors.grey[500]!,
