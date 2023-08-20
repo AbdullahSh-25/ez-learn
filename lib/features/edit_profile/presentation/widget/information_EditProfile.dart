@@ -133,7 +133,7 @@ class InfoEditProfile extends StatelessWidget {
                               child: Text(e),
                             ))
                         .toList(),
-                    value: year != -1 ? year : null,
+                    value: year != -1 ? year + 1 : null,
                     onChanged: (value) {
                       if (value != null) {
                         setState(() {

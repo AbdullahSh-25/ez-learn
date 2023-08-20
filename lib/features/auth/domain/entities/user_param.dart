@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:firebase_messaging/firebase_messaging.dart';
+
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 class UserParam {
   final String universcityId;
@@ -19,10 +21,12 @@ class UserParam {
     );
   }
 
-  Map<String, dynamic> toMap() {
+  Future<Map<String, dynamic>> toMap() async {
+    final String deviceToken = await FirebaseMessaging.instance.getToken() ?? "";
     return <String, dynamic>{
       'universityId': universcityId,
       'password': password,
+      "deviceToken": deviceToken,
     };
   }
 }

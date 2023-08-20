@@ -11,4 +11,7 @@ class AppUrl {
   static const create = "Student/Create";
   static const modify = "Student/Modify";
   static const getMySubjects = "Student/GetMySubjects";
+  //
+  static const getAllNameSubject = "Subject/GetAllNames";
+  static const upsertSubject = "Subject/UpsertSubjects";
 }

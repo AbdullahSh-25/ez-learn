@@ -4,7 +4,9 @@ import 'package:ez_learn/features/root/presentation/state/root_provider.dart';
 import 'package:ez_learn/features/setting/presentation/ui/screen/setting._screen.dart';
 import 'package:ez_learn/features/subject/presentation/ui/screen/subjects.dart';
 import 'package:ez_learn/home/presentation/ui/screen/home_screen.dart';
+import 'package:ez_learn/manage_subject/presentation/state/bloc/manage_subject_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
 class RootScreen extends StatefulWidget {

@@ -23,7 +23,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     return throwDioException(() async {
       final response = await _dio.post(
         AppUrl.login,
-        data: userParam.toMap(),
+        data: await userParam.toMap(),
       );
       return User.fromMap(response.data['response']);
     });

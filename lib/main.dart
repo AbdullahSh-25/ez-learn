@@ -8,9 +8,11 @@ import 'package:ez_learn/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'features/splash&onboarding/presentation/ui/screen/onboarding.dart';
+import 'manage_subject/presentation/state/bloc/manage_subject_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +20,6 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  printR(await FirebaseMessaging.instance.getToken());
   runApp(const MyApp());
 }
 
@@ -31,20 +32,23 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       designSize: const Size(360, 800),
-      builder: (context, child) => MaterialApp(
-        title: 'Flutter Demo',
-        theme: AppTheme.lightTheme,
-        debugShowCheckedModeBanner: false,
-        home: getIt<AuthLocal>().getUser() != null ? const RootScreen() : const OnBoardingScreen(),
-        builder: (context, child) {
-          return BotToastInit()(
-            context,
-            Directionality(
-              textDirection: TextDirection.rtl,
-              child: child!,
-            ),
-          );
-        },
+      builder: (context, child) => BlocProvider.value(
+        value: ManageSubjectBloc(),
+        child: MaterialApp(
+          title: 'Flutter Demo',
+          theme: AppTheme.lightTheme,
+          debugShowCheckedModeBanner: false,
+          home: getIt<AuthLocal>().getUser() != null ? const RootScreen() : const OnBoardingScreen(),
+          builder: (context, child) {
+            return BotToastInit()(
+              context,
+              Directionality(
+                textDirection: TextDirection.rtl,
+                child: child!,
+              ),
+            );
+          },
+        ),
       ),
     );
   }

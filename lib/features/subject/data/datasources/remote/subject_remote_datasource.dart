@@ -6,7 +6,7 @@ import 'package:ez_learn/core/constant/src/url.dart';
 import 'package:ez_learn/features/subject/data/model/subject_model.dart';
 
 abstract class SubjectRemoteDataSource {
-  Future<SubjectModel> getMySubject();
+  Future<List<SubjectModel>> getMySubject();
 }
 
 class SubjectRemoteDataSourceImpl extends SubjectRemoteDataSource {
@@ -16,10 +16,10 @@ class SubjectRemoteDataSourceImpl extends SubjectRemoteDataSource {
   });
 
   @override
-  Future<SubjectModel> getMySubject() {
+  Future<List<SubjectModel>> getMySubject() {
     return throwDioException(() async {
       final response = await dio.get(AppUrl.getMySubjects);
-      return SubjectModel.fromMap(response.data['response']);
+      return (response.data['response'] as List).map((e) => SubjectModel.fromMap(e)).toList();
     });
   }
 }

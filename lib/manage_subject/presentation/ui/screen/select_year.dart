@@ -1,7 +1,10 @@
 import 'package:ez_learn/core/common/config/theme/colors.dart';
 import 'package:ez_learn/features/lectures_details/presentation/ui/widget/coustom_appbar_lecture.dart';
+import 'package:ez_learn/manage_subject/presentation/state/bloc/manage_subject_bloc.dart';
 import 'package:ez_learn/manage_subject/presentation/ui/screen/selecte_subject.dart';
+import 'package:ez_learn/manage_subject/presentation/ui/screen/semister.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SelectScreen extends StatelessWidget {
@@ -40,7 +43,7 @@ class SelectScreen extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => const SelectSubject(),
+                      builder: (context) => SelectSemister(year: index + 1),
                     ),
                   );
                 },
@@ -50,6 +53,12 @@ class SelectScreen extends StatelessWidget {
               ),
             ),
           ),
+        ),
+        ElevatedButton(
+          onPressed: () {
+            context.read<ManageSubjectBloc>().add(UpserSubjecct());
+          },
+          child: Text('إرسال'),
         ),
       ],
     );

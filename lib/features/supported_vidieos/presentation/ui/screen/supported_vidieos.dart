@@ -36,8 +36,8 @@ class SupportedViedieos extends StatelessWidget {
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(builder: (context) => ViewVideo()));
                     },
-                    child: const VideoItem(
-                      title: ' هاد عنوان مابعرف اش اكتب هاد عنوان مابعرف اش اكتب',
+                    child: VideoItem(
+                      title: 'نظرية المعلومات- $index',
                       date: '2025-12-7',
                       isFavourite: true,
                     ),
